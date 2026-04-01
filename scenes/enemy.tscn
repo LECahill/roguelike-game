@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://cy1v0ax0yx331" path="res://scripts/enemy.gd" id="1_4ra3w"]
 [ext_resource type="Texture2D" uid="uid://kifpkhioj6j6" path="res://assets/graphics/monsters/monsters.png" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://dldl6whbvbpup" path="res://components/movement_component.gd" id="2_md0e3"]
+[ext_resource type="Script" uid="uid://cfhjiln6t6yly" path="res://components/health_component.gd" id="4_5uy6h"]
+[ext_resource type="Script" uid="uid://dtm516yp801wk" path="res://components/attack_component.gd" id="5_c4w8v"]
 
 [node name="Enemy" type="Node2D" unique_id=1356961694]
 z_index = 1
@@ -15,6 +17,19 @@ region_enabled = true
 region_rect = Rect2(352, 192, 32, 32)
 
 [node name="MovementComponent" type="Node" parent="." unique_id=1479406880]
+unique_name_in_owner = true
 script = ExtResource("2_md0e3")
 grid_position = Vector2i(7, 7)
 metadata/_custom_type_script = "uid://dldl6whbvbpup"
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1156128188]
+unique_name_in_owner = true
+script = ExtResource("4_5uy6h")
+max_health = 50
+metadata/_custom_type_script = "uid://cfhjiln6t6yly"
+
+[node name="AttackComponent" type="Node" parent="." unique_id=1037097149]
+unique_name_in_owner = true
+script = ExtResource("5_c4w8v")
+damage = 3
+metadata/_custom_type_script = "uid://dtm516yp801wk"

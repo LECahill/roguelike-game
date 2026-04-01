@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://b054dby4g7qn6" path="res://assets/graphics/rogues/rogues.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://cwyj4screkxv0" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Script" uid="uid://dldl6whbvbpup" path="res://components/movement_component.gd" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://cfhjiln6t6yly" path="res://components/health_component.gd" id="4_dqkch"]
+[ext_resource type="Script" uid="uid://dtm516yp801wk" path="res://components/attack_component.gd" id="5_qlg0r"]
 
 [node name="Player" type="Node2D" unique_id=545567360]
 z_index = 1
@@ -19,10 +21,21 @@ position = Vector2(16, 16)
 
 [node name="Camera2D" type="Camera2D" parent="CameraAnchor" unique_id=133603134]
 z_index = 1
-zoom = Vector2(2, 2)
 
 [node name="MovementComponent" type="Node" parent="." unique_id=1601492045]
 unique_name_in_owner = true
 script = ExtResource("3_qhqgy")
 grid_position = Vector2i(1, 1)
 metadata/_custom_type_script = "uid://dldl6whbvbpup"
+
+[node name="HealthComponent" type="Node" parent="." unique_id=416125640]
+unique_name_in_owner = true
+script = ExtResource("4_dqkch")
+max_health = 100
+metadata/_custom_type_script = "uid://cfhjiln6t6yly"
+
+[node name="AttackComponent" type="Node" parent="." unique_id=1085760716]
+unique_name_in_owner = true
+script = ExtResource("5_qlg0r")
+damage = 25
+metadata/_custom_type_script = "uid://dtm516yp801wk"
