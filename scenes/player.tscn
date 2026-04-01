@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://br7ur47eyc3sh"]
+
+[ext_resource type="Texture2D" uid="uid://b054dby4g7qn6" path="res://assets/graphics/rogues/rogues.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://cwyj4screkxv0" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://dldl6whbvbpup" path="res://components/movement_component.gd" id="3_qhqgy"]
+
+[node name="Player" type="Node2D" unique_id=545567360]
+z_index = 1
+script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=571272681]
+texture = ExtResource("1_3vyb7")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 32, 32, 32)
+
+[node name="CameraAnchor" type="Node2D" parent="." unique_id=1717602004]
+position = Vector2(16, 16)
+
+[node name="Camera2D" type="Camera2D" parent="CameraAnchor" unique_id=133603134]
+z_index = 1
+zoom = Vector2(2, 2)
+
+[node name="MovementComponent" type="Node" parent="." unique_id=1601492045]
+unique_name_in_owner = true
+script = ExtResource("3_qhqgy")
+grid_position = Vector2i(1, 1)
+metadata/_custom_type_script = "uid://dldl6whbvbpup"

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bhw08ll5ba7it"]
+
+[ext_resource type="PackedScene" uid="uid://br7ur47eyc3sh" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://bk16i1n0qxa2m" path="res://scenes/dungeon.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://dimmyqkens8qm" path="res://scenes/enemy.tscn" id="3_lnu2h"]
+
+[node name="Game" type="Node2D" unique_id=1000192761]
+
+[node name="Dungeon" parent="." unique_id=66597870 instance=ExtResource("2_yqjtg")]
+
+[node name="Player" parent="." unique_id=545567360 instance=ExtResource("1_uwrxv")]
+
+[node name="Enemy" parent="." unique_id=1356961694 instance=ExtResource("3_lnu2h")]

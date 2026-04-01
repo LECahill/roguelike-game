@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dimmyqkens8qm"]
+
+[ext_resource type="Script" uid="uid://cy1v0ax0yx331" path="res://scripts/enemy.gd" id="1_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://kifpkhioj6j6" path="res://assets/graphics/monsters/monsters.png" id="1_7p1mj"]
+[ext_resource type="Script" uid="uid://dldl6whbvbpup" path="res://components/movement_component.gd" id="2_md0e3"]
+
+[node name="Enemy" type="Node2D" unique_id=1356961694]
+z_index = 1
+script = ExtResource("1_4ra3w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1343801423]
+texture = ExtResource("1_7p1mj")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 192, 32, 32)
+
+[node name="MovementComponent" type="Node" parent="." unique_id=1479406880]
+script = ExtResource("2_md0e3")
+grid_position = Vector2i(7, 7)
+metadata/_custom_type_script = "uid://dldl6whbvbpup"
