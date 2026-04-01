@@ -36,3 +36,13 @@ func _process(delta: float) -> void:
 			currentState = GameState.PROCESSING_ENVIRONMENT
 		GameState.PROCESSING_ENVIRONMENT:
 			currentState = GameState.WAITING_FOR_INPUT
+
+func is_tile_occupied(target_position: Vector2i) -> bool:
+	if player.movement_component.grid_position == target_position:
+		return true
+	
+	for enemy in enemies:
+		if enemy.movement_component.grid_position == target_position:
+			return true
+	
+	return false

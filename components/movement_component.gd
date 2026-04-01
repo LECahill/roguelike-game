@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func try_move(direction: Vector2i) -> bool:
 	var target = grid_position + direction
-	if DungeonManager.grid[target.y][target.x] == 0:
+	if DungeonManager.grid[target.y][target.x] == 0 and !TurnManager.is_tile_occupied(target):
 		grid_position = target
 		get_parent().position = Vector2(target * TILE_SIZE)
 		return true
