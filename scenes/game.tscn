@@ -13,4 +13,14 @@
 
 [node name="Rat" parent="." unique_id=1356961694 instance=ExtResource("3_lnu2h")]
 
+[node name="Rat2" parent="." unique_id=1931170452 instance=ExtResource("3_lnu2h")]
+
+[node name="Rat3" parent="." unique_id=1258161615 instance=ExtResource("3_lnu2h")]
+
+[node name="Rat4" parent="." unique_id=614939911 instance=ExtResource("3_lnu2h")]
+
+[node name="Rat5" parent="." unique_id=1893023840 instance=ExtResource("3_lnu2h")]
+
 [node name="Goblin" parent="." unique_id=741628058 instance=ExtResource("4_lbhrr")]
+
+[node name="Goblin2" parent="." unique_id=416698992 instance=ExtResource("4_lbhrr")]

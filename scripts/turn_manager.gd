@@ -1,3 +1,7 @@
+#turn_manager.gd
+#this script will control the flow of the game
+
+# This script will be autoloaded
 extends Node
 
 @export var player: Node2D
