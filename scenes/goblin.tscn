@@ -31,5 +31,4 @@ metadata/_custom_type_script = "uid://cfhjiln6t6yly"
 [node name="MovementComponent" type="Node" parent="." unique_id=75736429]
 unique_name_in_owner = true
 script = ExtResource("5_yyaat")
-grid_position = Vector2i(5, 5)
 metadata/_custom_type_script = "uid://dldl6whbvbpup"

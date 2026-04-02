@@ -13,4 +13,54 @@
 
 [node name="Rat" parent="." unique_id=1356961694 instance=ExtResource("3_lnu2h")]
 
+[node name="Rat2" parent="." unique_id=1652122212 instance=ExtResource("3_lnu2h")]
+
+[node name="Rat3" parent="." unique_id=1027668010 instance=ExtResource("3_lnu2h")]
+
+[node name="Rat4" parent="." unique_id=935492729 instance=ExtResource("3_lnu2h")]
+
+[node name="Rat5" parent="." unique_id=318386213 instance=ExtResource("3_lnu2h")]
+
+[node name="Rat7" parent="." unique_id=1911240527 instance=ExtResource("3_lnu2h")]
+
+[node name="Rat8" parent="." unique_id=131835271 instance=ExtResource("3_lnu2h")]
+
+[node name="Rat9" parent="." unique_id=249354184 instance=ExtResource("3_lnu2h")]
+
+[node name="Rat10" parent="." unique_id=1244282117 instance=ExtResource("3_lnu2h")]
+
+[node name="Rat11" parent="." unique_id=1412801655 instance=ExtResource("3_lnu2h")]
+
+[node name="Rat12" parent="." unique_id=190435511 instance=ExtResource("3_lnu2h")]
+
+[node name="Rat6" parent="." unique_id=1968810660 instance=ExtResource("3_lnu2h")]
+
 [node name="Goblin" parent="." unique_id=741628058 instance=ExtResource("4_lbhrr")]
+
+[node name="Goblin2" parent="." unique_id=1527762582 instance=ExtResource("4_lbhrr")]
+
+[node name="Goblin3" parent="." unique_id=826738652 instance=ExtResource("4_lbhrr")]
+
+[node name="Goblin4" parent="." unique_id=885344497 instance=ExtResource("4_lbhrr")]
+
+[node name="Goblin5" parent="." unique_id=2028578774 instance=ExtResource("4_lbhrr")]
+
+[node name="Goblin6" parent="." unique_id=1953526733 instance=ExtResource("4_lbhrr")]
+
+[node name="Goblin7" parent="." unique_id=750874620 instance=ExtResource("4_lbhrr")]
+
+[node name="Goblin8" parent="." unique_id=741632543 instance=ExtResource("4_lbhrr")]
+
+[node name="Goblin9" parent="." unique_id=1542320163 instance=ExtResource("4_lbhrr")]
+
+[node name="Goblin10" parent="." unique_id=1445854976 instance=ExtResource("4_lbhrr")]
+
+[node name="Goblin11" parent="." unique_id=750382276 instance=ExtResource("4_lbhrr")]
+
+[node name="Goblin12" parent="." unique_id=1447354900 instance=ExtResource("4_lbhrr")]
+
+[node name="Goblin13" parent="." unique_id=1266735537 instance=ExtResource("4_lbhrr")]
+
+[node name="Goblin14" parent="." unique_id=1178547483 instance=ExtResource("4_lbhrr")]
+
+[node name="Goblin15" parent="." unique_id=770391897 instance=ExtResource("4_lbhrr")]

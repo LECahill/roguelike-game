@@ -42,7 +42,7 @@ func split_node(node: BSPNode):
 		#add room to list of rooms for spawning behavior
 		rooms.append(node.room)
 	else:
-		if room_width > room_height:
+		if room_width > room_height: #split along x axis
 			var split = randi_range(node.x1 + min_partition_size, node.x2 - min_partition_size)
 			var left_node = BSPNode.new()
 			var right_node = BSPNode.new()
@@ -62,7 +62,7 @@ func split_node(node: BSPNode):
 			split_node(left_node)
 			split_node(right_node)
 			
-		else:
+		else: #split along y axis
 			var split = randi_range(node.y1 + min_partition_size, node.y2 - min_partition_size)
 			var left_node = BSPNode.new()
 			var right_node = BSPNode.new()
@@ -104,9 +104,24 @@ func get_spawn_point() -> Vector2i:
 	var x = randi() % room.size.x + room.position.x
 	var y = randi() % room.size.y + room.position.y
 	var spawn_point = Vector2i(x, y)
-	while TurnManager.is_tile_occupied(spawn_point):
+	
+	#check to make sure nobody is spawning in ontop of eachother
+	while not is_valid_spawn(spawn_point):
 		room = rooms[randi() % rooms.size()]
 		x = randi() % room.size.x + room.position.x
 		y = randi() % room.size.y + room.position.y
 		spawn_point = Vector2i(x, y)
+		
 	return spawn_point
+
+#helper function
+func is_valid_spawn(point: Vector2i) -> bool:
+		if point.x <= 0 or point.x >= grid_width - 1:
+			return false
+		if point.y <= 0 or point.y >= grid_height - 1:
+			return false
+		if grid[point.y][point.x] != 0:
+			return false
+		if TurnManager.is_tile_occupied(point):
+			return false
+		return true

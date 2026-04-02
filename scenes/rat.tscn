@@ -19,7 +19,6 @@ region_rect = Rect2(352, 192, 32, 32)
 [node name="MovementComponent" type="Node" parent="." unique_id=1479406880]
 unique_name_in_owner = true
 script = ExtResource("2_md0e3")
-grid_position = Vector2i(7, 7)
 metadata/_custom_type_script = "uid://dldl6whbvbpup"
 
 [node name="HealthComponent" type="Node" parent="." unique_id=1156128188]

@@ -1,6 +1,6 @@
 class_name MovementComponent extends Node
 
-@export var grid_position: Vector2i
+var grid_position = Vector2i.ZERO
 
 const TILE_SIZE = 32
 
