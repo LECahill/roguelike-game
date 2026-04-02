@@ -11,7 +11,8 @@ const TILE_SIZE = 32
 func _ready() -> void:
 	TurnManager.player = self
 	health_component.died.connect(on_death)
-	
+	movement_component.grid_position = DungeonManager.get_spawn_point()
+	position = Vector2(movement_component.grid_position * TILE_SIZE)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

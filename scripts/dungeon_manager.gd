@@ -98,3 +98,15 @@ func generate_dungeon():
 	root.x2 = grid_width - padding
 	root.y2 = grid_height - padding
 	split_node(root)
+	
+func get_spawn_point() -> Vector2i:
+	var room = rooms[randi() % rooms.size()]
+	var x = randi() % room.size.x + room.position.x
+	var y = randi() % room.size.y + room.position.y
+	var spawn_point = Vector2i(x, y)
+	while TurnManager.is_tile_occupied(spawn_point):
+		room = rooms[randi() % rooms.size()]
+		x = randi() % room.size.x + room.position.x
+		y = randi() % room.size.y + room.position.y
+		spawn_point = Vector2i(x, y)
+	return spawn_point
