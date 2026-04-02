@@ -14,13 +14,14 @@ script = ExtResource("1_g2els")
 texture = ExtResource("1_3vyb7")
 centered = false
 region_enabled = true
-region_rect = Rect2(32, 32, 32, 32)
+region_rect = Rect2(0, 32, 32, 32)
 
 [node name="CameraAnchor" type="Node2D" parent="." unique_id=1717602004]
 position = Vector2(16, 16)
 
 [node name="Camera2D" type="Camera2D" parent="CameraAnchor" unique_id=133603134]
 z_index = 1
+zoom = Vector2(4, 4)
 
 [node name="MovementComponent" type="Node" parent="." unique_id=1601492045]
 unique_name_in_owner = true
