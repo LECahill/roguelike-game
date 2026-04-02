@@ -3,6 +3,7 @@ extends Node
 @export var player: Node2D
 @export var enemies = []
 
+#create different game states
 enum GameState {
 	WAITING_FOR_INPUT,
 	PROCESSING_PLAYER,
@@ -15,6 +16,7 @@ var currentState = GameState.WAITING_FOR_INPUT
 func _process(delta: float) -> void:
 	match currentState:
 		GameState.WAITING_FOR_INPUT:
+			#get inputs and set direction
 			var direction = Vector2i.ZERO
 			if Input.is_action_just_pressed("move_up"):
 				direction = (Vector2i(0, -1))
@@ -25,19 +27,22 @@ func _process(delta: float) -> void:
 			elif Input.is_action_just_pressed("move_right"):
 				direction = (Vector2i(1,0))
 			
+			#check if player made an input
 			if direction != Vector2i.ZERO:
 				var took_action = false
-				if player.try_move(direction):
+				if player.try_move(direction): #if player can move in direction of choice
 					took_action = true
-				else:
+				else: #if not, direction is either wall or enemy
 					var target_enemy = get_enemy_at(player.movement_component.grid_position + direction)
-					if target_enemy: #not null, there is enemy
+					if target_enemy: #not null, there is enemy. player attacks
 						target_enemy.health_component.take_damage(player.attack_component.attack())
 						took_action = true
 				if took_action:
 					currentState = GameState.PROCESSING_PLAYER
+					
 		GameState.PROCESSING_PLAYER:
 			currentState = GameState.PROCESSING_ENEMIES
+			
 		GameState.PROCESSING_ENEMIES:
 			for enemy in enemies:
 				var dir = enemy.calculate_direction()
@@ -47,6 +52,7 @@ func _process(delta: float) -> void:
 					if enemy.is_adjacent_to_player():
 						player.health_component.take_damage(enemy.attack_component.attack())
 			currentState = GameState.PROCESSING_ENVIRONMENT
+			
 		GameState.PROCESSING_ENVIRONMENT:
 			currentState = GameState.WAITING_FOR_INPUT
 

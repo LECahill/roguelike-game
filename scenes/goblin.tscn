@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bqk6183fydt2j"]
+
+[ext_resource type="Script" uid="uid://cy1v0ax0yx331" path="res://scripts/enemy.gd" id="1_4yait"]
+[ext_resource type="Texture2D" uid="uid://kifpkhioj6j6" path="res://assets/graphics/monsters/monsters.png" id="2_q3g0h"]
+[ext_resource type="Script" uid="uid://dtm516yp801wk" path="res://components/attack_component.gd" id="3_g1p1y"]
+[ext_resource type="Script" uid="uid://cfhjiln6t6yly" path="res://components/health_component.gd" id="4_lkl8q"]
+[ext_resource type="Script" uid="uid://dldl6whbvbpup" path="res://components/movement_component.gd" id="5_yyaat"]
+
+[node name="Goblin" type="Node2D" unique_id=741628058]
+script = ExtResource("1_4yait")
+metadata/_custom_type_script = "uid://cy1v0ax0yx331"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1325061479]
+texture = ExtResource("2_q3g0h")
+centered = false
+region_enabled = true
+region_rect = Rect2(224, 0, 32, 32)
+
+[node name="AttackComponent" type="Node" parent="." unique_id=331303033]
+unique_name_in_owner = true
+script = ExtResource("3_g1p1y")
+damage = 15
+metadata/_custom_type_script = "uid://dtm516yp801wk"
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1214220285]
+unique_name_in_owner = true
+script = ExtResource("4_lkl8q")
+max_health = 75
+metadata/_custom_type_script = "uid://cfhjiln6t6yly"
+
+[node name="MovementComponent" type="Node" parent="." unique_id=75736429]
+unique_name_in_owner = true
+script = ExtResource("5_yyaat")
+grid_position = Vector2i(5, 5)
+metadata/_custom_type_script = "uid://dldl6whbvbpup"

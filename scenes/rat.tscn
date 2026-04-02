@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cfhjiln6t6yly" path="res://components/health_component.gd" id="4_5uy6h"]
 [ext_resource type="Script" uid="uid://dtm516yp801wk" path="res://components/attack_component.gd" id="5_c4w8v"]
 
-[node name="Enemy" type="Node2D" unique_id=1356961694]
+[node name="Rat" type="Node2D" unique_id=1356961694]
 z_index = 1
 script = ExtResource("1_4ra3w")
 
