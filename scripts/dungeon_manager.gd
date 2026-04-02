@@ -20,10 +20,11 @@ class BSPNode:
 	var right: BSPNode
 	var room: Rect2i
 
+# creates BSP tree from a root node
 func split_node(node: BSPNode):
 	var room_width = node.x2 - node.x1
 	var room_height = node.y2 - node.y1
-	if room_width <= min_partition_size or room_height <= min_partition_size: #this carves out a room
+	if room_width <= min_partition_size or room_height <= min_partition_size: #leaf node
 		var max_w = node.x2 - node.x1 - (padding * 2)
 		var max_h = node.y2 - node.y1 - (padding * 2)
 		var room_w = randi_range(min_room_size, max(min_room_size, max_w))
@@ -59,8 +60,15 @@ func split_node(node: BSPNode):
 			node.left = left_node
 			node.right = right_node
 			
+			#recursive steps
 			split_node(left_node)
 			split_node(right_node)
+			
+			var room_a = get_room(left_node)
+			var room_b = get_room(right_node)
+			var center_a = Vector2i(room_a.position.x + room_a.size.x / 2, room_a.position.y + room_a.size.y / 2)
+			var center_b = Vector2i(room_b.position.x + room_b.size.x / 2, room_b.position.y + room_b.size.y / 2)
+			carve_corridor(center_a, center_b)
 			
 		else: #split along y axis
 			var split = randi_range(node.y1 + min_partition_size, node.y2 - min_partition_size)
@@ -79,8 +87,33 @@ func split_node(node: BSPNode):
 			node.left = left_node
 			node.right = right_node
 			
+			#recursive steps
 			split_node(left_node)
 			split_node(right_node)
+
+			var room_a = get_room(left_node)
+			var room_b = get_room(right_node)
+			var center_a = Vector2i(room_a.position.x + room_a.size.x / 2, room_a.position.y + room_a.size.y / 2)
+			var center_b = Vector2i(room_b.position.x + room_b.size.x / 2, room_b.position.y + room_b.size.y / 2)
+			carve_corridor(center_a, center_b)
+			
+func get_room(node: BSPNode) -> Rect2i:
+	if node.room.size != Vector2i.ZERO:
+		return node.room
+	return get_room(node.left) # just need any room from subtree, left or right doesnt matter
+
+func carve_corridor(a: Vector2i, b: Vector2i):
+	# horizontal
+	var x_start = min(a.x, b.x)
+	var x_end = max(a.x, b.x)
+	for x in range(x_start, x_end + 1):
+		grid[a.y][x] = 0
+	
+	# vertical
+	var y_start = min(a.y, b.y)
+	var y_end = max(a.y, b.y)
+	for y in range(y_start, y_end + 1):
+		grid[y][b.x] = 0
 
 func generate_dungeon():
 	#grid creation
