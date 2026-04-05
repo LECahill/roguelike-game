@@ -2,25 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://br7ur47eyc3sh" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://bk16i1n0qxa2m" path="res://scenes/dungeon.tscn" id="2_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://dimmyqkens8qm" path="res://scenes/rat.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://bqk6183fydt2j" path="res://scenes/goblin.tscn" id="4_lbhrr"]
 
 [node name="Game" type="Node2D" unique_id=1000192761]
 
 [node name="Dungeon" parent="." unique_id=66597870 instance=ExtResource("2_yqjtg")]
 
 [node name="Player" parent="." unique_id=545567360 instance=ExtResource("1_uwrxv")]
-
-[node name="Rat" parent="." unique_id=1356961694 instance=ExtResource("3_lnu2h")]
-
-[node name="Rat2" parent="." unique_id=1931170452 instance=ExtResource("3_lnu2h")]
-
-[node name="Rat3" parent="." unique_id=1258161615 instance=ExtResource("3_lnu2h")]
-
-[node name="Rat4" parent="." unique_id=614939911 instance=ExtResource("3_lnu2h")]
-
-[node name="Rat5" parent="." unique_id=1893023840 instance=ExtResource("3_lnu2h")]
-
-[node name="Goblin" parent="." unique_id=741628058 instance=ExtResource("4_lbhrr")]
-
-[node name="Goblin2" parent="." unique_id=416698992 instance=ExtResource("4_lbhrr")]

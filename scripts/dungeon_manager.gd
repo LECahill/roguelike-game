@@ -11,8 +11,8 @@ var grid = []
 var rooms = []
 
 # dungeon settings
-var grid_width = 30
-var grid_height = 30
+var grid_width = 50
+var grid_height = 50
 var padding = 1
 var min_room_size = 5
 var min_partition_size = 10
@@ -59,7 +59,7 @@ func split_node(node: BSPNode):
 		var left_node = BSPNode.new()
 		var right_node = BSPNode.new()
 		
-		if room_width > room_height: #split along x axis since the 
+		if room_width > room_height: #split along x axis since the x axis is largest
 			var split = randi_range(node.x1 + min_partition_size, node.x2 - min_partition_size)
 			left_node.x1 = node.x1
 			left_node.y1 = node.y1
@@ -69,7 +69,7 @@ func split_node(node: BSPNode):
 			right_node.y1 = node.y1
 			right_node.x2 = node.x2
 			right_node.y2 = node.y2
-		else: #split along y axis
+		else: #split along y axis since the y axis is largest
 			var split = randi_range(node.y1 + min_partition_size, node.y2 - min_partition_size)
 			left_node.x1 = node.x1
 			left_node.y1 = node.y1
@@ -80,6 +80,7 @@ func split_node(node: BSPNode):
 			right_node.x2 = node.x2
 			right_node.y2 = node.y2
 			
+		#update nodes left and right with updated information above
 		node.left = left_node
 		node.right = right_node
 		
@@ -87,12 +88,14 @@ func split_node(node: BSPNode):
 		split_node(left_node)
 		split_node(right_node)
 
+		# connect rooms to make corridors
 		var room_a = get_room(left_node)
 		var room_b = get_room(right_node)
 		var center_a = Vector2i(room_a.position.x + room_a.size.x / 2, room_a.position.y + room_a.size.y / 2)
 		var center_b = Vector2i(room_b.position.x + room_b.size.x / 2, room_b.position.y + room_b.size.y / 2)
 		carve_corridor(center_a, center_b)
-			
+
+#get room function is used when connecting two rooms to make corridors			
 func get_room(node: BSPNode) -> Rect2i:
 	if node.room.size != Vector2i.ZERO:
 		return node.room
