@@ -90,4 +90,4 @@ There is no win condition, UI, or progression system — just the systems themse
 
 ## Dungeon Generation
 
-![Dungeon Generation](assets/dungeon_gen.gif)
+![Dungeon Generation](assets/screenshots/dungeon_gen.gif)
