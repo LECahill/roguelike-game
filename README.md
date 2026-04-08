@@ -94,3 +94,8 @@ There is no win condition, UI, or progression system — just the systems themse
 ## Dungeon Generation
 
 ![Dungeon Generation](assets/screenshots/dungeon_gen.gif)
+
+## Enemy Pathfinding Behavior
+
+![Enemy Pathfinding Behavior](assets/screenshots/enemy_pathfinding.gif)
+
