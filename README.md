@@ -53,6 +53,9 @@ Moving into an enemy kills it.
 
 ```
 roguelike-game/
+├── assets/                  # Art and audio assets
+├── components/              # Reusable Godot components
+├── data/                    # Game data files
 ├── scenes/                  # Godot scenes
 ├── scripts/                 # GDScript files
 │   ├── dungeon_manager.gd   # BSP dungeon generation and room/corridor placement
