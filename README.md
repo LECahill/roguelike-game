@@ -87,3 +87,7 @@ There is no win condition, UI, or progression system — just the systems themse
 
 ![Dungeon Generation 1](assets/screenshots/Dungeon_generation1.png)
 ![Dungeon Generation 2](assets/screenshots/Dungeon_generation2.png)
+
+## Dungeon Generation
+
+![Dungeon Generation](assets/dungeon_gen.gif)
