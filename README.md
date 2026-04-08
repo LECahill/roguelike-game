@@ -21,7 +21,7 @@ Enemies navigate toward the player using a **Manhattan distance heuristic**:
 
 - Each enemy evaluates neighboring tiles and moves toward whichever reduces Manhattan distance to the player the most.
 - Manhattan distance: `|Δx| + |Δy|` — no diagonals, grid-accurate.
-- Enemies do not path through walls.
+- Enemies do not path around walls.
 - The player can kill enemies by moving into them.
 
 ---
