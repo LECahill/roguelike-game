@@ -17,6 +17,14 @@ var padding = 1
 var min_room_size = 5
 var min_partition_size = 10
 
+# preload enemies
+#rat
+var rat_scene = preload("res://scenes/rat.tscn")
+var rat = rat_scene.instantiate()
+#goblin
+var goblin_scene = preload("res://scenes/goblin.tscn")
+var goblin = goblin_scene.instantiate()
+
 #Binary Space Partitioning Node class
 class BSPNode:
 	var x1: int
@@ -133,6 +141,10 @@ func generate_dungeon():
 	root.y2 = grid_height - 1
 	split_node(root)
 	
+#spawn enemies	
+func spawn_enemies():
+	pass	
+
 func get_spawn_point() -> Vector2i:
 	var room = rooms[randi() % rooms.size()]
 	var x = randi() % room.size.x + room.position.x
